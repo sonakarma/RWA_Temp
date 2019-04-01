@@ -1,0 +1,16 @@
+.panel-header {
+    &.mat-card {
+        padding: 0px 4px;
+   		margin: 0px;
+    }
+    .panel-left {
+        margin-top: 10px;
+    }
+    
+}
+mat-paginator {
+    display: inline-block;
+}
+mat-paginator.mat-paginator {
+    display: inline-block;
+}

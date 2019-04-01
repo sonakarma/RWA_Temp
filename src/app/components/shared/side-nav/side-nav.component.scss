@@ -1,0 +1,43 @@
+.side-nav {
+   padding : 2%;
+}
+.side-nav-list {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    color: #ffffff;
+    text-align: center;
+}
+.side-nav-list li.side-nav-div {
+   padding : 6px 3px;
+ }
+ 
+.side-nav-icon-size {
+    height: 30px;
+    width: 30px;
+}
+.side-nav-list li {
+    padding: 10px 0px;
+}
+.side-nav-list li a {
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: gray;
+    &.active {
+        color: #3cc0f0;
+    }
+}
+
+.side-nav-list mat-icon {
+    font-size: 35px;
+    width: auto;
+}
+.logo_div {
+    position: fixed;
+    bottom: 0;
+}
+.logo {
+    height: 15px;
+    width: 62px;
+}

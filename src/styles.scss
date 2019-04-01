@@ -1,0 +1,245 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+.clearfix {
+    clear: both;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-item-center {
+    align-items: center
+}
+app-expansion-panel {
+    width: 100%;
+}
+.mat-tab-header {
+}
+.mat-tab-label-container .mat-tab-label {
+    padding: 0px 12px;
+    min-width: 100px;
+    &.mat-tab-label-active {
+        color: #4285f4;
+    }
+}
+.mat-tab-group.mat-primary .mat-tab-label-container .mat-ink-bar, 
+.mat-tab-nav-bar.mat-primary .mat-tab-label-container .mat-ink-bar {
+    background-color: inherit;
+}
+.width-100  {
+    width: 100%;
+}
+.marginTop30 {
+	margin-top: 30px;
+}
+.margin-5 {
+    margin: 5px;
+}
+.margin-10 {
+    margin: 10px !important;
+}
+.bg-color-primary {
+	background-color :#00aff0;
+}
+.color-white {
+	color : #FFFFFF;
+}
+
+.color_dark_blue {
+	color: #032A57;
+}
+.color_light_blue {
+	color: #032A57;
+	opacity:0.64;
+}
+.color_head {
+	color: #1348A7;
+}
+.font-size-12 {
+	font-size: 14px;
+}
+.font-size-14 {
+	font-size: 16px;
+}
+.font-weight-700{
+	font-weight: 700;
+}
+.margin_right_25{
+	margin-right: 25px;
+}
+.margin-left-4{
+	margin-left: 25px !important;
+}
+.margin-10px-round {
+    margin: 10px;
+}
+.margin-btm-10 {
+    margin-bottom: 10px;
+}
+.margin-btm-5 {
+    margin-bottom: 5px;
+}
+.mat-checkbox-label {
+    color: #00aff0;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0;
+    margin-top: -10px;
+    .mat-select-arrow {
+      margin-top: 12px;  
+    }
+}
+.mat-form-field  {
+    font-family: 400 13px/20px 'Montserrat', sans-serif  !important;
+}
+.mat-expansion-panel-header, .mat-tab-group, .mat-card, .mat-form-field, .mat-select {
+  font-family: 'Montserrat', sans-serif !important; 
+  font-size: 13px; 
+}
+.align-center-block {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.font-weight-bold {
+    font-weight: bold;
+}
+.margin-top15 {
+    margin-top: 15px;
+}
+.border-right-gray {
+    border-right: 1px solid #ccc;
+}
+.border-bottom-gray {
+    border-bottom: 1px solid #ccc;
+}
+.margin-10 {
+    margin: 10px;
+}
+.margin-right-10 {
+    margin-right: 10px;
+}
+.no-border {
+    border: 0px !important;
+}
+
+.pointer-event-null {
+    pointer-events: none;
+}
+.hand-cursor {
+    cursor: pointer
+}
+
+/* text color sytles*/
+.text-primary {
+    color: #007bff!important;
+}
+.text-muted {
+    color: #6c757d!important;
+}
+.text-success {
+    color: #28a745!important;
+}
+.text-info {
+    color: #17a2b8!important;
+}
+.text-warning {
+    color: #ffc107!important;
+}
+.text-danger {
+    color: #dc3545!important;
+}
+.text-secondary {
+    color: #6c757d!important;
+}
+.text-dark {
+    color: #343a40!important;
+}
+.text-light {
+    color: #f8f9fa!important;
+}
+.text-white {
+    color: #fff!important;
+}
+.flex-box {
+    display: flex;
+}
+.flex-1 {
+    flex: 1;
+}
+.INPROGRESS {
+    background-color: #1faed4 !important;
+}
+.COMPLETED {
+    background-color: #4caf50 !important;
+}
+.OPEN {
+    background-color: #fbbc05 !important; 
+}
+.UP-COMING {
+
+}
+.ON-GOING {
+}
+
+.padding_1 {
+    padding : 1%;
+}
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #6B6B6B!important;
+}
+.display_none {
+    display:none;
+}
+.text_d_none{
+    text-decoration: none;
+}
+.content_space_arround{
+    place-content: space-around;
+}
+.content_space_between{
+    place-content: space-between;
+}
+.content_center{
+    place-content: center;
+}
+.padding_2{
+    padding: 2px;
+}
+.position_relative {
+    position:relative;
+}
+.align_center {
+    align-items: center;
+}
+.margin_left_5{
+    margin-left: 5px;
+}
+.height_55{
+    height : 55px;
+}
+.spiner_div{
+    margin:0 auto;
+}

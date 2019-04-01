@@ -1,0 +1,41 @@
+<div class="grid-container mat-elevation-z1">
+  <div *ngIf="config">
+    <mat-paginator #paginator *ngIf="pagination" [pageSize]="pageSize" [length]="config.content ? config.content.length : 0"
+      [pageSizeOptions]="pageSizeOptions" (page)="pageSize = $event.pageSize">
+    </mat-paginator>
+    <mat-table #table [dataSource]="dataSource" matSort [matSortActive]="defaultSortColumn" matSortDisableClear matSortDirection="desc"
+      [ngStyle]="cssStyle">
+      <ng-container [matColumnDef]="item" *ngFor="let item of config.keys; let i = index">
+        <div *ngIf="config.header[i].type === 'icon'">
+          <mat-header-cell *matHeaderCellDef>
+            {{config.header[i].title}}
+          </mat-header-cell>
+        </div>
+        <div *ngIf="config.header[i].type !== 'icon'">
+          <mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="disableSort || config.header[i].disableSort">
+            {{config.header[i].title}}
+          </mat-header-cell>
+        </div>
+        <mat-cell *matCellDef="let element; let j = index">
+          <div *ngIf="!config.header[i].type; else typeItems">
+            <span [innerHTML]="element[item]"></span>
+          </div>
+          <ng-template #typeItems>
+            <div *ngIf="config.header[i].type === 'icon'">
+              <div *ngIf="config.header[i].iconType === 'remove'" class="text-center">
+                <mat-icon class="hand-cursor" (click)="deleteItem(element, j)">clear</mat-icon>
+              </div>
+            </div>
+          </ng-template>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="config.keys"></mat-header-row>
+      <mat-row class="hand-cursor"
+        *matRowDef="let row; columns: config.keys;" (click)="handleRowClick(row)">
+      </mat-row>
+    </mat-table>
+    <div *ngIf="config.content.length === 0" class="text-center padding-10px no-records-found">
+      <b>No Records Found</b>
+    </div>
+  </div>
+</div>

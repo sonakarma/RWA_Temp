@@ -1,0 +1,27 @@
+<nav class="header">
+  <div class="logo pull-left">
+<!--     <div style="color: #2b2a2a;">Logo</div> -->
+        <div class="alert_icon" style="color: black;">Logo</div>
+  </div>
+  <div class="pull-right user">
+    <div FxLayout=row>
+      <button mat-icon-button >
+        <img class="notification_icon" src="assets/images/icons/Notifications.png" >
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menulog" class="user-list">
+        <img src="assets/images/avatars/profile.jpg" >
+        <span style="color: white;margin-right: 25px;">
+          test1
+        </span>
+      </button> 
+    </div>
+    <mat-menu #menulog="matMenu">
+      <button mat-menu-item >
+        <div [routerLink]="'/login'" >
+          <mat-icon>exit_to_app</mat-icon>
+          <span >Logout</span>
+        </div>
+      </button>
+    </mat-menu>
+  </div>
+</nav>

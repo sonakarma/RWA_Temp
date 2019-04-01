@@ -1,0 +1,53 @@
+
+  <div fxFlex=100 fxLayout=column>
+    <div fxLayout="row" >
+      <mat-card class="header-shadow" style="display: inline;flex :1;height: 3px;">
+
+       <div fxLayout=row style="place-content: space-around;    float: left;
+       margin-top: -14px;" class="hand-cursor">
+       <img style="height: 25px;width: 25px;" src="src\assets\images\icons.Home.png">
+       <span style="font: bolder;font-size: 26px;">></span>
+       <span style="font: bolder;font-size: 14px;margin-top: 7px;">Property</span>
+       
+     </div>
+
+</mat-card> 
+</div>
+
+
+<div class="project-container">
+    <mat-tab-group #tabGroup>
+        <mat-tab label="Overview">
+            <app-panel-header-filter ></app-panel-header-filter> 
+            <mat-form-field appearance="outline" style="width: 140px;margin: 2px;margin-left: 48px;">
+            <mat-label>Select Asset</mat-label>
+            <mat-select placeholder="Asset" >
+              <mat-option>
+                {{asset}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+            <div style ="place-content :center;">
+                <!-- <mat-spinner style="margin:0 auto;" *ngIf="depListSpinner; else content" [diameter]="40"></mat-spinner> -->
+            </div>
+            <div fxLayout="row" >
+
+                <ng-template>
+                    <app-expansion-panel 
+                        [pageIndex]="pageIndex"
+                        [pageSize]="pageSize"
+                        [expansionPanelOptions]="propertyDataOptions" 
+                        [data]="property" (updateRefresh)="getPropertyData()" 
+                        >
+                    </app-expansion-panel>
+                </ng-template>    
+            </div>
+
+           
+        </mat-tab>
+        <mat-tab label="New">
+            <app-property-details formType="create" (tabSwitch)="tabSwitch($event)"></app-property-details>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+</div>

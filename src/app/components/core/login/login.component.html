@@ -1,0 +1,59 @@
+
+<!-- <div id="login-head">
+  <div  class="main-head" fxFlex=88>
+    <div >    
+
+      <span class="tittle">Birclay</span>
+    </div>
+  </div>
+  <div fxFlex=12 class="title-div"></div>
+</div> -->
+
+<div id="login" fxLayoutAlign="center center"> 
+  <div id="login-form-wrapper"  fxLayout="row" fxLayoutAlign="center center">
+
+    <div id="login-form" >
+       <div class="logo-row">
+      </div>       
+      <form  name="loginForm"  [formGroup]="loginForm" novalidate>
+
+
+        <div fxLayout="row" class="inputBoxShadow">
+          <div class="nameAndPwd" >Email</div>
+          <div>
+            <mat-form-field>
+              <input matInput formControlName="email" type="email" placeholder="Enter email or username">
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row" class="inputBoxShadow" style="margin-top: 30px;">
+          <div class="nameAndPwd">Password</div>
+          <mat-form-field>
+            <input matInput formControlName="password" type="password" placeholder="Enter password" >
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" style ="place-content :space-between;">
+          <div class="remember-forgot-password" style="margin-left: 15px;">
+            <a class="forgot-password" >
+              Sign Up
+            </a>
+          </div>
+          <div class="remember-forgot-password">
+            <a class="forgot-password" >
+              Forgot Password?
+            </a>
+          </div>
+        </div>
+        <button mat-raised-button style="background-color: #2196F3; color: white;" type="submit" 
+            class="submit-button"  [disabled]="isLoading || !loginForm.valid" aria-label="LOG IN" (click)="onLoginFormSubmit()">LOGIN
+        </button>
+        <div style ="place-content :center;">
+          <mat-spinner style="margin:0 auto;" *ngIf="isLoading" [diameter]="40"></mat-spinner>
+        </div>                  
+       <div class="logo_div">Powered by
+        <img src="assets/images/logos/Briclay.png" alt="logo_bri" class="logo_bri">
+      </div>         
+      </form>
+    </div>
+  </div>
+</div>

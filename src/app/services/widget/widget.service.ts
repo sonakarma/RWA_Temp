@@ -6,6 +6,5 @@ import { PropertyDetailsComponent } from '../../components/core/dashboard/proper
 export class WidgetService {
 	widgets: { [id: string]: Type<{}> } = {
 		'app-property-details':PropertyDetailsComponent,
-		
 	};
 }

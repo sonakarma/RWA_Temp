@@ -6,7 +6,12 @@ import { Component, OnInit,EventEmitter,Output,Input } from '@angular/core';
   styleUrls: ['./property-details.component.scss']
 })
 export class PropertyDetailsComponent implements OnInit {
-	@Input() data: any;
+  @Input() data: any;
+  @Input() formType: string;
+  @Output() public tabSwitch: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public updateRefresh: EventEmitter<any> = new EventEmitter<any>();
+
+  
 	changeHistory = false;
 	histroy={}
 
@@ -76,11 +81,9 @@ export class PropertyDetailsComponent implements OnInit {
   	"modifiedVersion":"v 0.1",
   	"aprrovedBy":"Sakhtivelu",
   	"comments":"Initial Draft"
-  	
       
 }
 }
- 
 
 ]
 

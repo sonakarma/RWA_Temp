@@ -11,13 +11,13 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class PropertyComponent implements OnInit {
 	@ViewChild('tabGroup') tabGroup;
-    @ViewChild(MatPaginator) paginator: MatPaginator;
 	propertyDataOptions = [];
 	propertySpinner =false;
 	asset =['01','02' , '03'];
-property :any;
-	
-
+	property :any;
+	pageIndex : number = 0;
+	pageSize : number = 5;
+	ncmListSpinner = false;
 
 constructor( private route: ActivatedRoute,
 	private router: Router) { }
@@ -26,14 +26,20 @@ ngOnInit() {
 	this.getPropertyData()
 }
 
+dataPaginatorChange(event){
+		this.pageIndex = event.pageIndex;
+		this.pageSize = event.pageSize;
+	}
+
 getPropertyData() {
-this.property = [
+	this.ncmListSpinner = true;
+	this.property = [
 		{
-			list : {"name":"C V Raman Nagar",
-					"location":"C V Raman Nagar,Banglore",
-					"status":"Complete"},
-			area : "10 acres",
-			dateOfAssesment:"22/02/2019"
+			"name":"C V Raman Nagar",
+			"location":"C V Raman Nagar,Banglore",
+			"status":"OPEN",
+			"area" : "10 acres",
+			"dateOfAssesment":"22/02/2019"
 		}
 	]
 
@@ -41,23 +47,24 @@ this.property = [
 	console.log(this.propertyDataOptions,"propertyDataOptions")
 
 	if(this.property.length > 0){
-
 		this.propertyDataOptions = [
 			{
 				title: 'User Name', type: 'list', list: [
 				{ title: 'UserName', key: 'name', hideTitle: true, type: 'label' },
-				{ title: 'Address', key: 'location', hideTitle: true, type: 'label' },
-				{ title: 'Status', key: 'status', hideTitle: true, type: 'label', isStatus: true }
+				{ title: 'location', key: 'location', hideTitle: true, type: 'label' },
+				{ title: 'status', key: 'status', hideTitle: true, type: 'label', isStatus: true }
 				]
 			},
 			{ title: 'Area', key: 'area' },
 			{ title: 'Date Of Assesment', key: 'dateOfAssesment' },
 		]
+		this.ncmListSpinner = false;
 		console.log(this.propertyDataOptions,"dsddddddddddddd")
 	}
 }
 
-   tabSwitch(tabReq) {
+	tabSwitch(tabReq) {
 	this.tabGroup.selectedIndex = tabReq.index;
+	this.getPropertyData()
    }
 }
